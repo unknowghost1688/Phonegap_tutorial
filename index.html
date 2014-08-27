@@ -8,7 +8,11 @@
 
     <!--JQuery Mobile Css-->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
-
+    <script>
+        function try_dl() {
+            window.location("https://build.phonegap.com/apps/1035781/download/android");
+        }
+    </script>
 </head>
 <body>
     <!-- Start of first page -->
@@ -19,6 +23,7 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
+            <input type="button" id="aa" onclick="try_dl();" value="download me" />
             <p>I'm first in the source order so I'm shown as the page.</p>
             <p>View internal page called <a href="#bar">bar</a></p>
         </div><!-- /content -->
@@ -36,6 +41,7 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
+            <input type="button" id="bb" onclick="try_dl();" value="download me" />
             <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
             <p><a href="#foo">Back to foo</a></p>
         </div><!-- /content -->
