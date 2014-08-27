@@ -16,6 +16,32 @@
         function try_dl2() {
             window.location.href = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk";
         }
+
+        $(".aaaaa").click(
+            function (e) {
+                e.preventDefault();
+
+                //open download link in new page
+                window.open($(this).attr("href"));
+
+                //redirect current page to success page
+                window.location = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx";
+                window.focus();
+            }
+        );
+
+        $(".bbbbb").click(
+            function (e) {
+                e.preventDefault();
+
+                //open download link in new page
+                window.open($(this).attr("href"));
+
+                //redirect current page to success page
+                window.location = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk";
+                window.focus();
+            }
+        );
     </script>
 </head>
 <body>
@@ -35,6 +61,8 @@
             </form>
             <input type="button" id="aa" onclick="try_dl();" value="download me" />
             <input type="button" id="Button1" onclick="try_dl2();" value="download me now" />
+            <input type="button" id="aaaaa" onclick="try_dl2();" value="download me now aaaaa" />
+            <input type="button" id="bbbbb" onclick="try_dl2();" value="download me now bbbbb" />
             <a class="btn icon action download primary" href="/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" onclick="s_objectID=&quot;https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1&quot;;return this.s_oc?this.s_oc(e):true"> <span class="filetype">apk</span></a>
             <p>I'm first in the source order so I'm shown as the page.</p>
             <p>View internal page called <a href="#bar">bar</a></p>
