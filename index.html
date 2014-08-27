@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
     <script>
         function try_dl() {
-            window.location = "https://build.phonegap.com/apps/1035781/download/android";
+            window.location = "https://build.phonegap.com/apps/1035781/install/?qr_key=csGz3TwWZfiYLsg68EVx";
         }
     </script>
 </head>
@@ -24,6 +24,7 @@
 
         <div role="main" class="ui-content">
             <input type="button" id="aa" onclick="try_dl();" value="download me" />
+            <a class="btn icon action download primary" href="/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" onclick="s_objectID=&quot;https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1&quot;;return this.s_oc?this.s_oc(e):true"> <span class="filetype">apk</span></a>
             <p>I'm first in the source order so I'm shown as the page.</p>
             <p>View internal page called <a href="#bar">bar</a></p>
         </div><!-- /content -->
@@ -42,6 +43,7 @@
 
         <div role="main" class="ui-content">
             <input type="button" id="bb" onclick="try_dl();" value="download me" />
+            <a class="btn icon action download primary" href="/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" onclick="s_objectID=&quot;https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1&quot;;return this.s_oc?this.s_oc(e):true"> <span class="filetype">apk</span></a>
             <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
             <p><a href="#foo">Back to foo</a></p>
         </div><!-- /content -->
