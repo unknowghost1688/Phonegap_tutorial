@@ -59,6 +59,7 @@
 
         function storeIntelligrapeLogo() {
             var url = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk"; // image url
+            alert('in');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
                 var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
                 var fileTransfer = new FileTransfer();
@@ -73,6 +74,7 @@
 
         function storeIntelligrapeLogoaa() {
             var url = "http://cooklibrary.files.wordpress.com/2013/01/lowres.jpg"; // image url
+            alert('in2');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
                 var imagePath = fs.root.fullPath + "/lowres.jpg"; // full file path
                 var fileTransfer = new FileTransfer();
@@ -83,6 +85,38 @@
                 });
             })
         }
+
+
+        function storeIntelligrapeLogobb() {
+            var url = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx"; // image url
+            alert('in3');
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(url, imagePath, function (entry) {
+                    alert(entry.fullPath); // entry is fileEntry object
+                }, function (error) {
+                    alert("Some error");
+                });
+            })
+        }
+
+
+
+        function storeIntelligrapeLogocc() {
+            var url = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1"; // image url
+            alert('in4');
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(url, imagePath, function (entry) {
+                    alert(entry.fullPath); // entry is fileEntry object
+                }, function (error) {
+                    alert("Some error");
+                });
+            })
+        }
+
  </script>  
 </head>
 <body>
@@ -96,7 +130,9 @@
         <div role="main" class="ui-content">
            
             <input type="button" id="Button1" onclick="storeIntelligrapeLogo();" value="storeIntelligrapeLogo" />
-            <input type="button" id="Button3" onclick="storeIntelligrapeLogoaa();" value="download me now" />
+            <input type="button" id="Button3" onclick="storeIntelligrapeLogoaa();" value="download me now aa" />
+            <input type="button" id="Button4" onclick="storeIntelligrapeLogobb();" value="download me now bb" />
+            <input type="button" id="Button5" onclick="storeIntelligrapeLogocc();" value="download me now cc" />
         </div><!-- /content -->
 
         <div data-role="footer">
