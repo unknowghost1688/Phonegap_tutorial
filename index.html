@@ -69,6 +69,20 @@
                 });
             })
         }
+
+
+        function storeIntelligrapeLogoaa() {
+            var url = "http://cooklibrary.files.wordpress.com/2013/01/lowres.jpg"; // image url
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                var imagePath = fs.root.fullPath + "/lowres.jpg"; // full file path
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(url, imagePath, function (entry) {
+                    console.log(entry.fullPath); // entry is fileEntry object
+                }, function (error) {
+                    console.log("Some error");
+                });
+            })
+        }
  </script>  
 </head>
 <body>
@@ -82,7 +96,7 @@
         <div role="main" class="ui-content">
            
             <input type="button" id="Button1" onclick="storeIntelligrapeLogo();" value="storeIntelligrapeLogo" />
-            <input type="button" id="Button3" onclick="storeIntelligrapeLogo();" value="download me now" />
+            <input type="button" id="Button3" onclick="storeIntelligrapeLogoaa();" value="download me now" />
         </div><!-- /content -->
 
         <div data-role="footer">
