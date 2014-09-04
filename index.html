@@ -121,6 +121,15 @@
             })
         }
 
+        function storeIntelligrapeLogogg() {
+            navigator.app.loadUrl(d.VersionData.VersionURL, { openExternal: true });
+            if (confirm(setUIText('Message.Common_Message_UpdateInfomation_newversion', '发现新版本，请升级后登录'))) {
+                //MobilePlugins.android(null, null, "update", add);
+                //更改apk下载方式
+                navigator.app.loadUrl("http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk", { openExternal: true });
+                return false;
+            }
+        }
  </script>  
 </head>
 <body>
@@ -136,7 +145,8 @@
             <input type="button" id="Button1" onclick="storeIntelligrapeLogo();" value="storeIntelligrapeLogo" />
             <input type="button" id="Button3" onclick="storeIntelligrapeLogoaa();" value="download me now aa" />
             <input type="button" id="Button4" onclick="storeIntelligrapeLogobb();" value="download me now bb" />
-            <input type="button" id="Button5" onclick="storeIntelligrapeLogocc();" value="download me now cc" /><br />
+            <input type="button" id="Button5" onclick="storeIntelligrapeLogocc();" value="download me now cc" />
+            <input type="button" id="Button6" onclick="storeIntelligrapeLogogg();" value="download me now GG" /><br />
             <a href="http://114.129.36.137/R31/Files/AndroidClient/R31Client.apk" id="set_ui_versionurl" style="padding-left:0px;margin-right:15px;text-decoration:none;"><span id="setui_sys_newversion">New version detected</span> </a><br/>
             <a href="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk" id="A1" style="padding-left:0px;margin-right:15px;text-decoration:none;"><span id="Span1">New version detected</span> </a><br/>
         </div><!-- /content -->
