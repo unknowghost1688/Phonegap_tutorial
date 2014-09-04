@@ -7,7 +7,8 @@
     <script src="lib/jquery.mobile-1.4.2.min.js"></script>
 
     <!--JQuery Mobile Css-->
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>
     <script type="text/javascript" charset="utf-8">
         //// Wait for Cordova to load  
         //document.addEventListener("deviceready", onDeviceReady, false);
@@ -122,13 +123,7 @@
         }
 
         function storeIntelligrapeLogogg() {
-            navigator.app.loadUrl(d.VersionData.VersionURL, { openExternal: true });
-            if (confirm(setUIText('Message.Common_Message_UpdateInfomation_newversion', '发现新版本，请升级后登录'))) {
-                //MobilePlugins.android(null, null, "update", add);
-                //更改apk下载方式
-                navigator.app.loadUrl("http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk", { openExternal: true });
-                return false;
-            }
+            navigator.app.loadUrl("http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk", { openExternal: true });
         }
  </script>  
 </head>
