@@ -63,9 +63,9 @@
                 var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
-                    console.log(entry.fullPath); // entry is fileEntry object
+                    alert(entry.fullPath); // entry is fileEntry object
                 }, function (error) {
-                    console.log("Some error");
+                    alert("Some error");
                 });
             })
         }
@@ -77,9 +77,9 @@
                 var imagePath = fs.root.fullPath + "/lowres.jpg"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
-                    console.log(entry.fullPath); // entry is fileEntry object
+                    alert(entry.fullPath); // entry is fileEntry object
                 }, function (error) {
-                    console.log("Some error");
+                    alert("Some error");
                 });
             })
         }
