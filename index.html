@@ -61,6 +61,7 @@
             var url = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk"; // image url
             alert('in');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                alert(fs.root.fullPath);
                 var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
@@ -76,6 +77,7 @@
             var url = "http://cooklibrary.files.wordpress.com/2013/01/lowres.jpg"; // image url
             alert('in2');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                alert(fs.root.fullPath);
                 var imagePath = fs.root.fullPath + "/lowres.jpg"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
@@ -91,6 +93,7 @@
             var url = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx"; // image url
             alert('in3');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                alert(fs.root.fullPath);
                 var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
@@ -107,6 +110,7 @@
             var url = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1"; // image url
             alert('in4');
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                alert(fs.root.fullPath);
                 var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
                 var fileTransfer = new FileTransfer();
                 fileTransfer.download(url, imagePath, function (entry) {
