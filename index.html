@@ -8,77 +8,68 @@
 
     <!--JQuery Mobile Css-->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
-    <script>
-        function try_dl() {
-            window.location.href = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx";
+    <script type="text/javascript" charset="utf-8">
+        //// Wait for Cordova to load  
+        //document.addEventListener("deviceready", onDeviceReady, false);
+        //// Cordova is ready  
+        //function onDeviceReady() {
+        //    alert("Going to start download");
+        //    downloadFile();
+        //}
+        //function downloadFile() {
+        //    window.requestFileSystem(
+        //                 LocalFileSystem.PERSISTENT, 0,
+        //                 function onFileSystemSuccess(fileSystem) {
+        //                     fileSystem.root.getFile(
+        //                                 "dummy.html", { create: true, exclusive: false },
+        //                                 function gotFileEntry(fileEntry) {
+        //                                     var sPath = fileEntry.fullPath.replace("dummy.html", "");
+        //                                     var fileTransfer = new FileTransfer();
+        //                                     fileEntry.remove();
+        //                                     fileTransfer.download(
+        //                                                "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk",
+        //                                                sPath + "TimeSheet-debug.apk",
+        //                                                function (theFile) {
+        //                                                    console.log("download complete: " + theFile.toURI());
+        //                                                    showLink(theFile.toURI());
+        //                                                },
+        //                                                function (error) {
+        //                                                    console.log("download error source " + error.source);
+        //                                                    console.log("download error target " + error.target);
+        //                                                    console.log("upload error code: " + error.code);
+        //                                                }
+        //                                                );
+        //                                 },
+        //                                 fail);
+        //                 },
+        //                 fail);
+        //}
+        //function showLink(url) {
+        //    alert(url);
+        //    var divEl = document.getElementById("deviceready");
+        //    var aElem = document.createElement("a");
+        //    aElem.setAttribute("target", "_blank");
+        //    aElem.setAttribute("href", url);
+        //    aElem.appendChild(document.createTextNode("Ready! Click To Open."))
+        //    divEl.appendChild(aElem);
+        //}
+        //function fail(evt) {
+        //    console.log(evt.target.error.code);
+        //}
+
+        function storeIntelligrapeLogo() {
+            var url = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk"; // image url
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+                var imagePath = fs.root.fullPath + "/TimeSheet-debug.apk"; // full file path
+                var fileTransfer = new FileTransfer();
+                fileTransfer.download(url, imagePath, function (entry) {
+                    console.log(entry.fullPath); // entry is fileEntry object
+                }, function (error) {
+                    console.log("Some error");
+                });
+            })
         }
-
-        function try_dl2() {
-            window.location.href = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk";
-        }
-
-        function try_dl3() {
-            window.location.replace("https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx");
-        }
-
-        function try_dl4() {
-            window.location.replace("https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1");
-        }
-
-        function try_dl5() {
-            window.location.replace("http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk");
-        }
-
-        $(".aaaaa").click(
-            function (e) {
-                e.preventDefault();
-
-                //open download link in new page
-                window.open($(this).attr("href"));
-
-                //redirect current page to success page
-                window.location = "https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx";
-                window.focus();
-            }
-        );
-
-        $(".bbbbb").click(
-            function (e) {
-                e.preventDefault();
-
-                //open download link in new page
-                window.open($(this).attr("href"));
-
-                //redirect current page to success page
-                window.location = "http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk";
-                window.focus();
-            }
-        );
-        
-        $(".ccccc").click(
-            function (e) {
-                e.preventDefault();
-
-                //open download link in new page
-                window.open($(this).attr("href"));
-
-                //redirect current page to success page
-                alert('success');
-            }
-        );
-        
-        $(".ddddd").click(
-            function (e) {
-                e.preventDefault();
-
-                //open download link in new page
-                window.open($(this).attr("href"));
-
-                //redirect current page to success page
-                alert('success');
-            }
-        );
-    </script>
+ </script>  
 </head>
 <body>
     <!-- Start of first page -->
@@ -89,30 +80,9 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
-            <form method="get" action="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx">
-                <button type="submit">Download!</button>
-            </form>
-            <form method="get" action="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk">
-                <button type="submit">Download 2!</button>
-            </form>
-            <input type="button" id="aa" onclick="try_dl();" value="download me" /><br />
-            <input type="button" id="Button1" onclick="try_dl2();" value="download me now" /><br />
-            <input type="button" id="3" onclick="try_dl3();" value="download me now 3" /><br />
-            <input type="button" id="4" onclick="try_dl4();" value="download me now 4" /><br />
-            <input type="button" id="5" onclick="try_dl5();" value="download me now 5" /><br />
-            <a class="ccccc" href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx">Download</a><br />
-            <a class="ddddd" href="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk">Download</a><br />
-            <a class="btn icon action download primary" href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" > <span class="filetype">apk</span></a><br />
-            <a class="btn icon action download primary" href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1" > <span class="filetype">apk</span></a><br />
-            <a class="btn icon action download primary" href="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk" > <span class="filetype">apk</span></a><br />
-            <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-            <a href="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk" data-ajax="false">Link</a> <br /><br />
-            <a href="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk" target="_blank">Download</a> <br /><br />
-            <a href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" data-ajax="false">Link2</a> <br /><br />
-            <a href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" target="_blank">Download2</a> <br /><br />
-            <a href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1" data-ajax="false">Link2</a> <br /><br />
-            <a href="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1" target="_blank">Download2</a> <br /><br />
+           
+            <input type="button" id="Button1" onclick="storeIntelligrapeLogo();" value="storeIntelligrapeLogo" />
+            <input type="button" id="Button3" onclick="storeIntelligrapeLogo();" value="download me now" />
         </div><!-- /content -->
 
         <div data-role="footer">
@@ -128,14 +98,8 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
-            <form method="get" action="https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx">
-                <button type="submit">Download!</button>
-            </form>
-            <form method="get" action="http://s3.amazonaws.com/android.phonegap/slicehost-production/apps/1035781/TimeSheet-debug.apk">
-                <button type="submit">Download 2!</button>
-            </form>
-            <input type="button" id="bb" onclick="try_dl();" value="download me" />
-            <input type="button" id="Button2" onclick="try_dl2();" value="download me now" />
+            <input type="button" id="bb" onclick="storeIntelligrapeLogo();" value="download me" />
+            <input type="button" id="Button2" onclick="storeIntelligrapeLogo();" value="download me now" />
             <a class="btn icon action download primary" href="/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx" onclick="s_objectID=&quot;https://build.phonegap.com/apps/1035781/download/android/?qr_key=csGz3TwWZfiYLsg68EVx_1&quot;;return this.s_oc?this.s_oc(e):true"> <span class="filetype">apk</span></a>
             <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
             <p><a href="#foo">Back to foo</a></p>
